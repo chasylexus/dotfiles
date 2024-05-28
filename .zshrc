@@ -35,9 +35,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-# What OS are we running?
-if [[ $(uname) == "Linux" ]]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-else
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+SAVEHIST=999999999999  # Save most-recent 999999999999 lines
+HISTFILE=~/.zsh_history
+HIST_STAMPS="yyyy-mm-dd"
