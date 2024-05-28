@@ -17,7 +17,7 @@ ln -sf $(gpgconf --list-dirs agent-ssh-socket) ~/.ssh/gpg.sock
 gpgconf --launch gpg-agent
 
 alias icat="kitten icat"
-alias s="kitten ssh"
+alias ssh="kitty +kitten ssh"
 alias mon="bpytop"
 
 export PYENV_ROOT="$HOME/.pyenv"
