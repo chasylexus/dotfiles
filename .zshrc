@@ -24,6 +24,7 @@ gpgconf --launch gpg-agent
 
 export LANG=ru_RU.UTF-8
 export LC_ALL=ru_RU.UTF-8
+export EDITOR=$(which nano)
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
