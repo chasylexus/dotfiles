@@ -30,6 +30,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 
+alias history="history 1"
 alias icat="kitten icat"
 alias ssh="kitty +kitten ssh"
 alias mon="bpytop"
