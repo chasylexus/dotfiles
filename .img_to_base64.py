@@ -2,6 +2,7 @@ import argparse
 import base64
 from bs4 import BeautifulSoup
 
+
 # Create an ArgumentParser object
 parser = argparse.ArgumentParser(description='Process some integers.')
 
@@ -27,5 +28,9 @@ for img in soup.find_all('img'):
         b64 = base64.b64encode(data).decode()
         img['src'] = f'data:{mime};base64,{b64}'
 
-with open(output_file, 'w', encoding='utf-8') as f:
-    f.write(str(soup))
+try:
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(str(soup))
+        print('Success!')
+except:
+    print('Fail!')
