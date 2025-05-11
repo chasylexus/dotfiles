@@ -13,6 +13,8 @@ fi
 if [[ $(uname) == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
+    autoload -Uz compinit
+    compinit
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
