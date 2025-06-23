@@ -9,13 +9,15 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
+autoload -Uz compinit
+compinit
+
 # What OS are we running?
 if [[ $(uname) == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
-    autoload -Uz compinit
-    compinit
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
 
@@ -48,3 +50,6 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 SAVEHIST=999999999999  # Save most-recent 999999999999 lines
 HISTFILE=~/.zsh_history
 HIST_STAMPS="yyyy-mm-dd"
+
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
